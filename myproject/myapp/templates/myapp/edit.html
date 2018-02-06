@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article Edit</title>
+</head>
+<body>
+
+<div>
+    <form action="{% url 'myapp:save' %}" method="post">
+        {% csrf_token %}
+        <div><input type="hidden" name="id" value="{{article.id | default:0}}"/></div>
+        <div><input type="text" name="title" value="{{article.title | default:''}}"/></div>
+        <div><input type="text" name="content" value="{{article.content | default:''}}"/></div>
+        <div><input type="submit" name="提交"/></div>
+    </form>
+</div>
+
+</ul>
+</body>
+</html>
